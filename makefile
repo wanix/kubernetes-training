@@ -4,15 +4,15 @@ init:
 list-master-snapshots:
 	vagrant snapshot list kube-master
 
-save-master:
-	vagrant halt kube-master
-	vagrant snapshot save kube-master $(snapshot)
-	vagrant up kube-master
+save:
+	vagrant halt
+	vagrant snapshot save $(snapshot)
+	vagrant up
 
-restore-master:
-	vagrant halt kube-master
-	vagrant snapshot restore kube-master $(snapshot)
-	vagrant up kube-master
+restore:
+	vagrant halt
+	vagrant snapshot restore $(snapshot)
+	vagrant up
 
 tear-down:
 	vagrant destroy
