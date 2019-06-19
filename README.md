@@ -50,8 +50,13 @@ The Kubernetes fundamentals training will guide through the usage of `kubeadm` s
 
 Note that sometimes `kubeadm init` will pick the wrong network interface & bind Kubernetes API server to the NAT
 interface `10.0.2.15`.
-If this happens:
 
+If this happens:
+* Reset the master node by either:
+  * `sudo kubeadm reset`
+  * or use the make target `make restore snapshot=before-kubeadm`
+* Fetch your public IP out of `ip addr`. This one should be set on the *eth1* interface
+* Use the `--apiserver-advertise-address` option during `kubeadm init`
 
 After establishing the cluster:
 * make sure that you follow `kubeadm` instructions to move the Kubernetes config
