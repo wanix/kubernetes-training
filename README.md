@@ -48,10 +48,16 @@ You can connect to the instances through the following commands:
 
 The Kubernetes fundamentals training will guide through the usage of `kubeadm` so I won't tell that much about it.
 
+Note that sometimes `kubeadm init` will pick the wrong network interface & bind Kubernetes API server to the NAT
+interface `10.0.2.15`.
+If this happens:
+
+
 After establishing the cluster:
-* take care
+* make sure that you follow `kubeadm` instructions to move the Kubernetes config
+  file to your user inside the Kubernetes master node
 * create a snapshot for Kubernetes master: it could help you later if you screw up
-        * `make save snapshot=after-kubeadm`
+  * `make save snapshot=after-kubeadm`
 
 ### Fetch the Kubernetes config file for local usage
 
