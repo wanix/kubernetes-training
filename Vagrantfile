@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
       v.name = "kube-master"
       v.cpus = 4
       v.memory = 4096
+      v.customize ["modifyvm", :id, "--audio", "none"]
     end
   end
 
@@ -34,6 +35,7 @@ Vagrant.configure("2") do |config|
         v.name = "kube-worker-#{i}"
         v.cpus = 2
         v.memory = 2048
+        v.customize ["modifyvm", :id, "--audio", "none"]
       end
     end
  end
