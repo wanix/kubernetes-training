@@ -10,11 +10,11 @@ the LFS258 Kubernetes fundamentals training.
 * Bridge networking: we use public networking to expose Kubernetes API Server
 
 This setup was used on a Macos based workstation.
-I believe the Vagrant part of this repositor will work fine on any machine that support Virtualbox & Vagrant.
+I believe the Vagrant part of this repository will work fine on any machine that support Virtualbox & Vagrant.
 
 ## Configuration
 
-As of now there is few configuration options available except for:
+As of now there is few configuration options available except:
 * configure the number of Kubernetes worker you want to have. Default: 1
 * configure the network interface that will be used as a bridge.
     * The default value suits my personal rig: *there are good chances that you need to update this configuration.*
@@ -68,7 +68,7 @@ After establishing the cluster:
 
 You can use the following commands in order to use your own terminal/shell to work with this cluster
 
-Note: you must have followed `kubeadm` instructions about moving the Kubernetes configuratin file to the user home.
+Note: you must have followed `kubeadm` instructions about moving the Kubernetes configuration file to the user home.
 
 ```
 vagrant ssh-config > /tmp/vagrant.ssh
