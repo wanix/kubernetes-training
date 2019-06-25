@@ -71,10 +71,7 @@ You can use the following commands in order to use your own terminal/shell to wo
 Note: you must have followed `kubeadm` instructions about moving the Kubernetes configuration file to the user home.
 
 ```
-vagrant ssh-config > /tmp/vagrant.ssh
-scp -F /tmp/vagrant.ssh kube-master:~/.kube/config /tmp/vagrant.kube.config
-rm /tmp/vagrant.ssh
-
+vagrant ssh kube-master -c "sudo cat /etc/kubernetes/admin.conf" > /tmp/vagrant.kube.config
 export KUBECONFIG=/tmp/vagrant.kube.config
 ```
 
