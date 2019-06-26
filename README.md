@@ -57,6 +57,27 @@ If this happens:
   * or use the make target `make restore snapshot=before-kubeadm`
 * Fetch your public IP out of `ip addr`. This one should be set on the *eth1* interface
 * Use the `--apiserver-advertise-address` option during `kubeadm init`
+Example:
+
+``` bash
+kubeadm init --kubernetes-version 1.15.0 --pod-network-cidr 192.168.0.0/16 --apiserver-advertise-address $(ip addr show eth1 | grep 'inet ' | sed 's/  */ /g' | cut -d ' ' -f 3 | cut -d '/' -f 1)
+```
+
+You can also see with `kubectl get nodes -o wide` that the INTERNAL-IP can be also the NAT one
+
+``` bash
+kubectl get nodes -o wide
+NAME            STATUS   ROLES    AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION               CONTAINER-RUNTIME
+kube-master     Ready    master   22h   v1.15.0   10.0.2.15      <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
+
+sudo sed -i "s/KUBELET_EXTRA_ARGS=/KUBELET_EXTRA_ARGS=--node-ip=$(ip addr show eth1 | grep 'inet ' | sed 's/  */ /g' | cut -d ' ' -f 3 | cut -d '/' -f 1)/g" /etc/sysconfig/kubelet; sudo systemctl daemon-reload; sudo systemctl restart kubelet
+
+kubectl get nodes -o wide
+NAME            STATUS   ROLES    AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION               CONTAINER-RUNTIME
+kube-master     Ready    master   22h   v1.15.0   172.28.128.3   <none>        CentOS Linux 7 (Core)   3.10.0-957.21.3.el7.x86_64   docker://1.13.1
+```
+
+You may have to do that also for the workers
 
 After establishing the cluster:
 * make sure that you follow `kubeadm` instructions to move the Kubernetes config
