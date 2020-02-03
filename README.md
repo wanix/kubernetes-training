@@ -63,7 +63,18 @@ If this happens:
 Example:
 
 ``` bash
-kubeadm init --kubernetes-version 1.15.0 --pod-network-cidr 192.168.0.0/16 --apiserver-advertise-address $(ip addr show eth1 | grep 'inet ' | sed 's/  */ /g' | cut -d ' ' -f 3 | cut -d '/' -f 1)
+sudo sed -i '/k8smaster/d' /etc/hosts
+echo $(ip addr show eth1 | grep 'inet ' | sed 's/  */ /g' | cut -d ' ' -f 3 | cut -d '/' -f 1) k8smaster | sudo tee -a /etc/hosts
+cat << EOF > kubeadm-config.yaml
+apiVersion: kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+kubernetesVersion: $(rpm -qa kubeadm | cut -d "-" -f 2)
+controlPlaneEndpoint: "k8smaster:6443"
+networking:
+  podSubnet: 192.168.0.0/16
+EOF
+
+sudo kubeadm init --config=kubeadm-config.yaml --upload-certs | tee kubeadm-init.out
 ```
 
 You can also see with `kubectl get nodes -o wide` that the INTERNAL-IP can be also the NAT one
