@@ -1,5 +1,10 @@
+.PHONY : init stop
+
 init:
 	vagrant up
+
+stop:
+	vagrant halt
 
 list-snapshots:
 	vagrant snapshot list
