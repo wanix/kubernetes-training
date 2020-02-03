@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     master.vm.provider :virtualbox do |v|
       v.name = "kube-master"
       v.cpus = 4
-      v.memory = 4096
+      v.memory = 6144
       v.customize ["modifyvm", :id, "--audio", "none"]
     end
   end
@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
       worker.vm.provider :virtualbox do |v|
         v.name = "kube-worker-#{i}"
         v.cpus = 2
-        v.memory = 2048
+        v.memory = 6144
         v.customize ["modifyvm", :id, "--audio", "none"]
       end
     end
