@@ -15,11 +15,14 @@ I believe the Vagrant part of this repository will work fine on any machine that
 ## Configuration
 
 As of now there is few configuration options available except:
-* configure the number of Kubernetes worker you want to have. Default: 1
-* configure the network interface that will be used as a bridge.
+* Configure the number of Kubernetes worker you want to have. Default: 1
+* Configure the network interface that will be used as a bridge.
     * The default value suits my personal rig: *there are good chances that you need to update this configuration.*
+* Memory and vcpus are also set for 32GB of memory for the host and Core i5
 
 Those options are set in the Vagrantfile directly.
+
+You should also want to fix the versions for kubelet, kubeadm and kubectl versions corresponding to your training, set those versions in prepare-for-kube.sh
 
 ## Usage
 

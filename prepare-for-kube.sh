@@ -1,5 +1,9 @@
 #!/bin/bash
 
+export KUBELET_VERSION=1.16.1-0
+export KUBEADM_VERSION=1.16.1-0
+export KUBECTL_VERSION=1.16.1-0
+
 # Disable Swap
 swapoff -a
 sed -i 's|^/swapfile|#/swapfile|' /etc/fstab
@@ -22,7 +26,14 @@ exclude=kube*
 EOF
 
 yum update -y
-yum install -y vim net-tools wget docker kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum install -y vim net-tools wget yum-plugin-versionlock
+cat <<EOF > /etc/yum/pluginconf.d/versionlock.list
+# Kubernetes env for training
+0:kubeadm-${KUBEADM_VERSION}.*
+0:kubectl-${KUBECTL_VERSION}.*
+0:kubelet-${KUBELET_VERSION}.*
+EOF
+yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 # Enable routing
 cat <<EOF >  /etc/sysctl.d/k8s.conf
