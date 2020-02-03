@@ -122,6 +122,7 @@ When you don't need it anymore:`make tear-down`
 
 * My Google drive resources (limited accesses): https://drive.google.com/drive/u/0/folders/1zjKh1BMi-SqPfxdg9vRWa_9uzGszOEvu
 
+* Large-scale cluster management at Google with Borg: https://storage.googleapis.com/pub-tools-public-publication-data/pdf/43438.pdf
 
 ### CKA related
 
