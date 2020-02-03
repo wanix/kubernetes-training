@@ -107,3 +107,30 @@ As for the workers: you can simply kill them &
 ### Tear down the infrastructure
 
 When you don't need it anymore:`make tear-down`
+
+## Usefull links
+
+* Program: https://www.cncf.io/certification/cka/
+
+* Handbook: https://www.cncf.io/certification/candidate-handbook
+
+* Curriculum: https://github.com/cncf/curriculum/raw/master/certified_kubernetes_administrator_exam_v1.9.0.pdf
+
+* Github: https://github.com/cncf/curriculum
+
+* Kubectl Cheatsheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+
+### CKA related
+
+* Curriculum: https://github.com/cncf/curriculum/raw/master/certified_kubernetes_administrator_exam_v1.9.0.pdf
+
+* Exam Tips: https://www.cncf.io/certification/tips
+
+* https://dev.to/scriptautomate/tips-for-the-certified-kubernetes-exams-cka-and-ckad-49mn
+
+* https://medium.com/@imarunrk/certified-kubernetes-administrator-cka-tips-and-tricks-part-1-2e98e9b31de4
+
+* https://medium.com/platformer-blog/how-i-passed-the-cka-certified-kubernetes-administrator-exam-8943aa24d71d
+
+* https://levelup.gitconnected.com/kubernetes-cka-hands-on-challenge-2-scheduler-playground-f6c0ea7389ca
