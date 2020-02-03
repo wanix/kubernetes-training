@@ -120,6 +120,8 @@ When you don't need it anymore:`make tear-down`
 
 * Kubectl Cheatsheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
+* My Google drive resources (limited accesses): https://drive.google.com/drive/u/0/folders/1zjKh1BMi-SqPfxdg9vRWa_9uzGszOEvu
+
 
 ### CKA related
 
