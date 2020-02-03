@@ -1,3 +1,6 @@
 .vagrant/
 .kubeconfig
 *.swp
+training_conf/*.yml
+training_conf/*.yaml
+training_conf/*.json
