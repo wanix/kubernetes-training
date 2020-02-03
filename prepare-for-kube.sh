@@ -33,7 +33,7 @@ cat <<EOF > /etc/yum/pluginconf.d/versionlock.list
 0:kubectl-${KUBECTL_VERSION}.*
 0:kubelet-${KUBELET_VERSION}.*
 EOF
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+yum install -y docker kubelet kubeadm kubectl --disableexcludes=kubernetes
 
 # Enable routing
 cat <<EOF >  /etc/sysctl.d/k8s.conf
