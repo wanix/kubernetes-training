@@ -138,6 +138,8 @@ When you don't need it anymore:`make tear-down`
 
 * Large-scale cluster management at Google with Borg: https://storage.googleapis.com/pub-tools-public-publication-data/pdf/43438.pdf
 
+* Completion for fish: https://github.com/evanlucas/fish-kubectl-completions
+
 ### CKA related
 
 * Curriculum: https://github.com/cncf/curriculum/raw/master/certified_kubernetes_administrator_exam_v1.9.0.pdf
