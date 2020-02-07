@@ -1,8 +1,6 @@
 .vagrant/
 .kubeconfig
 *.swp
-training_files/*.yml
-training_files/*.yaml
-training_files/*.json
-training_files/*.json
-training_files/*.pem
+training_files/*
+!training_files/README.md
+
