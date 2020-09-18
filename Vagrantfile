@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
 
   config.vagrant.plugins =  [ "vagrant-vbguest" ]
-  config.ssh.config = "/dev/null"
+  config.ssh.config = "./ssh_client_config"
   # Configuration
   nb_workers = 3
   bridge_interface = "wlp59s0"
