@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   # Configuration
   nb_workers = 3
   bridge_interface = "wlp59s0"
+  # bridge_interface = "enxe4b97ad0fa7f"
 
   # Common VM configuration
 
