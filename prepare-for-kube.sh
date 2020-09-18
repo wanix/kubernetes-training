@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export KUBELET_VERSION=1.16.1-0
-export KUBEADM_VERSION=1.16.1-0
-export KUBECTL_VERSION=1.16.1-0
+export KUBELET_VERSION=1.19.2-0
+export KUBEADM_VERSION=1.19.2-0
+export KUBECTL_VERSION=1.19.2-0
 
 # Disable Swap
 swapoff -a
